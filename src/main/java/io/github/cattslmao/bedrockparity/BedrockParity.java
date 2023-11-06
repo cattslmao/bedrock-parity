@@ -1,22 +1,31 @@
 package io.github.cattslmao.bedrockparity;
 
+import io.github.cattslmao.bedrockparity.mixin.ItemAccessor;
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.item.Items;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class BedrockParity implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("bedrock-parity");
+	public static final ParityConfig config = new ParityConfig();
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		ParityConfig.Setting CAKE_STACKING = config.register(new ParityConfig.Setting("cakeStacking").setDefault(true));
 
-		LOGGER.info("Hello Fabric world!");
+		config.load();
+
+		if ( CAKE_STACKING.getBoolean() ) {
+			((ItemAccessor) Items.CAKE).setMaxCount(64);
+			LOGGER.info("Cakes patched.");
+		} else {
+			LOGGER.info("Cakes not patched.");
+		}
+
+		config.debugPrint();
+
+		// config.save();
 	}
 }
