@@ -3,7 +3,6 @@ package io.github.cattslmao.bedrockparity;
 import io.github.cattslmao.bedrockparity.mixin.ItemAccessor;
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
