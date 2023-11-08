@@ -3,6 +3,7 @@ package io.github.cattslmao.bedrockparity;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import net.fabricmc.api.Environment;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,32 +12,28 @@ import java.util.List;
 import java.util.Map;
 
 public class ParityConfig {
-    private final Path path = Path.of("config", "bedrockparity.json");
+    private final Path path;
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     private final Map<String, Setting> registry = new HashMap<>();
 
+    public ParityConfig( String configIdentifier ) {
+        path = Path.of("config", "bedrockparity_" + configIdentifier + ".json");
+    }
+
     public static class Setting {
         String label;
 
-        Object valueDefault;
+        Object defaultValue;
         Object value;
-
-        List<String> mixins;
 
         public Setting(String label) {
             this.label = label;
         }
 
         public Setting setDefault(Object value) {
-            this.valueDefault = value;
-            this.value = this.valueDefault;
-
-            return this;
-        }
-
-        public Setting addMixin(String name) {
-            this.mixins.add(name);
+            this.defaultValue = value;
+            this.value = this.defaultValue;
 
             return this;
         }
@@ -49,11 +46,11 @@ public class ParityConfig {
             return this.value;
         }
 
-        public Boolean getBoolean() {
+        public Boolean getAsBoolean() {
             return (boolean) this.get();
         }
 
-        public int getInt() {
+        public int getAsInt() {
             return (int) this.get();
         }
     }
