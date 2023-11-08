@@ -5,6 +5,11 @@
 	"mixins": [
 		"ItemAccessor"
 	],
+	"client": [
+		"CakeBurpMixin"
+	],
+	"server": [
+	],
 	"injectors": {
 		"defaultRequire": 1
 	}
