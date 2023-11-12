@@ -20,7 +20,7 @@ public class CakeBurp {
     private static void injected(WorldAccess worldAccess, BlockPos pos, BlockState state, PlayerEntity player, CallbackInfoReturnable<ActionResult> cir) {
         if (cir.getReturnValue() == ActionResult.SUCCESS) {
             World world = (World) worldAccess;
-            world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, world.random.nextFloat() * 0.1F + 0.9F);
+            world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, world.random.nextFloat() * 0.1F + 0.9F); // use player.playsound if we want to make this a client feature
         }
     }
 }
