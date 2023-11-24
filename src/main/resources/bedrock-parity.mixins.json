@@ -5,7 +5,9 @@
   "mixins": [
     "CakeBurp",
     "ItemAccessor",
-    "LoadWorld"
+    "LoadWorld",
+    "parrot.ParrotStayOn",
+    "parrot.ParrotFatalPoison"
   ],
   "client": [
   ],
