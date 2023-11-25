@@ -1,0 +1,28 @@
+package io.github.cattslmao.bedrockparity.mixin.creativeTaming;
+
+import net.minecraft.entity.passive.WolfEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+@Mixin(WolfEntity.class)
+public class CreativeTameWolf{
+    // there should be a better way of doing it but idk one yet
+    boolean creative;
+
+    @Inject(method = "interactMob", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/random/Random;nextInt(I)I"))
+    private void injected(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
+        creative = player.getAbilities().creativeMode;
+    }
+
+    @ModifyArg(method = "interactMob", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/random/Random;nextInt(I)I"))
+    private int injected(int var1) {
+        if (creative) return 1;
+        return var1;
+    }
+}

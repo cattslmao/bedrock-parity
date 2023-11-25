@@ -20,6 +20,13 @@ repositories {
 		name = 'TerraformersMC'
 		url = 'https://maven.terraformersmc.com'
 	}
+	maven {
+		name = 'Modrinth'
+		url = 'https://api.modrinth.com/maven'
+		content {
+			includeGroup 'maven.modrinth'
+		}
+	}
 }
 
 loom {
@@ -47,7 +54,10 @@ dependencies {
 	modCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
 	modLocalRuntime "com.terraformersmc:modmenu:${project.modmenu_version}"
 
-//	modLocalRuntime(files("build/libs/authme-8.0.0+1.20.2.jar"))
+	// Mixin Extras
+	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.2.1")))
+
+//	modLocalRuntime("maven.modrinth:auth-me:8.0.0+1.20.2")
 //	modLocalRuntime(files("build/libs/cloth-config-12.0.109-fabric.jar"))
 
 	// Uncomment the following line to enable the deprecated Fabric API modules.
