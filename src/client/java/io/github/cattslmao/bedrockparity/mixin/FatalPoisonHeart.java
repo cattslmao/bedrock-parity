@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class FatalPoisonHeart {
 
     @ModifyExpressionValue(method = "fromPlayerState",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;isFrozen()Z"))
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;hasStatusEffect(Lnet/minecraft/entity/effect/StatusEffect;)Z"))
     private static boolean ifFrozen(boolean original, PlayerEntity player){
         return original || player.hasStatusEffect(BedrockParity.FATAL_POISON);
     }

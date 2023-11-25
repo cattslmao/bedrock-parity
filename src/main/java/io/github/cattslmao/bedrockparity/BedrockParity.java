@@ -19,7 +19,7 @@ public class BedrockParity implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		config.load();
-		Registry.register(Registries.STATUS_EFFECT, new Identifier("bedrockparity", "fatal_poison"), FATAL_POISON);
+		Registry.register(Registries.STATUS_EFFECT, new Identifier("bedrock-parity", "fatal_poison"), FATAL_POISON);
 		config.save();
 	}
 
