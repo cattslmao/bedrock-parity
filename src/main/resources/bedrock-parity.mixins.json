@@ -7,10 +7,7 @@
     "ItemAccessor",
     "LoadWorld",
     "parrot.ParrotStayOn",
-    "parrot.ParrotFatalPoison",
-    "creativeTaming.CreativeTameParrot",
-    "creativeTaming.CreativeTameCat",
-    "creativeTaming.CreativeTameWolf"
+    "parrot.ParrotFatalPoison"
   ],
   "client": [
     "FatalPoisonHeart"
