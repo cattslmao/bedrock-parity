@@ -9,12 +9,9 @@
     "parrot.ParrotStayOn",
     "parrot.ParrotFatalPoison"
   ],
-  "client": [
-    "FatalPoisonHeart"
-  ],
   "server": [
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+    }
 }
