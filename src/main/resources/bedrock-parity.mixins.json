@@ -6,8 +6,10 @@
     "CakeBurp",
     "ItemAccessor",
     "LoadWorld",
-    "parrot.ParrotStayOn",
-    "parrot.ParrotFatalPoison"
+    "entity.FoxLongerWindup",
+    "entity.FoxMoreHealth",
+    "entity.ParrotStayOn",
+    "entity.ParrotFatalPoison"
   ],
   "server": [
   ],

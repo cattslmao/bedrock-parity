@@ -1,4 +1,4 @@
-package io.github.cattslmao.bedrockparity.mixin.parrot;
+package io.github.cattslmao.bedrockparity.mixin.entity;
 
 import io.github.cattslmao.bedrockparity.BedrockParity;
 import net.minecraft.entity.effect.StatusEffectInstance;

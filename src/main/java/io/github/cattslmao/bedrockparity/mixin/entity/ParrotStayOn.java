@@ -1,4 +1,4 @@
-package io.github.cattslmao.bedrockparity.mixin.parrot;
+package io.github.cattslmao.bedrockparity.mixin.entity;
 
 import net.minecraft.entity.player.PlayerAbilities;
 import net.minecraft.entity.player.PlayerEntity;
