@@ -1,5 +1,6 @@
 package io.github.cattslmao.bedrockparity.mixin.block.lightfiltering;
 
+import io.github.cattslmao.bedrockparity.ParityConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
@@ -21,6 +22,6 @@ public class WaterLightFiltering extends Block {
 
     @Override
     public int getOpacity(BlockState state, BlockView world, BlockPos p) {
-        return this.fluid.isIn(FluidTags.WATER) ? 2 : super.getOpacity(state,world,p);
+        return this.fluid.isIn(FluidTags.WATER) && ParityConfig.LIGHT_FILTERING.asBool() ? 2 : super.getOpacity(state,world,p);
     }
 }

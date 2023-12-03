@@ -1,5 +1,6 @@
 package io.github.cattslmao.bedrockparity.mixin.block.lightfiltering;
 
+import io.github.cattslmao.bedrockparity.ParityConfig;
 import net.minecraft.block.BeaconBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -16,6 +17,6 @@ public abstract class BeaconLightFiltering extends Block {
 
     @Override
     public int getOpacity(BlockState state, BlockView world, BlockPos p) {
-        return 14;
+        return ParityConfig.LIGHT_FILTERING.asBool() ? 14 : super.getOpacity(state, world, p);
     }
 }

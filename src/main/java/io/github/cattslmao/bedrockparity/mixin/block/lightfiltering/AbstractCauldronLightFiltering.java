@@ -1,5 +1,6 @@
 package io.github.cattslmao.bedrockparity.mixin.block.lightfiltering;
 
+import io.github.cattslmao.bedrockparity.ParityConfig;
 import net.minecraft.block.AbstractCauldronBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -16,6 +17,6 @@ public abstract class AbstractCauldronLightFiltering extends Block {
 
     @Override
     public int getOpacity(BlockState state, BlockView world, BlockPos p) {
-        return 3;
+        return ParityConfig.LIGHT_FILTERING.asBool() ? 3 : super.getOpacity(state, world, p);
     }
 }

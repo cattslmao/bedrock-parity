@@ -1,5 +1,6 @@
 package io.github.cattslmao.bedrockparity.mixin.block.lightfiltering;
 
+import io.github.cattslmao.bedrockparity.ParityConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HopperBlock;
@@ -16,6 +17,6 @@ public abstract class HopperLightFiltering extends Block {
 
     @Override
     public int getOpacity(BlockState state, BlockView world, BlockPos p) {
-        return 3;
+        return ParityConfig.LIGHT_FILTERING.asBool() ? 3 : super.getOpacity(state, world, p);
     }
 }
