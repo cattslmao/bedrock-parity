@@ -9,7 +9,14 @@
     "entity.FoxLongerWindup",
     "entity.FoxMoreHealth",
     "entity.ParrotStayOn",
-    "entity.ParrotFatalPoison"
+    "entity.ParrotFatalPoison",
+    "block.lightfiltering.AbstractCauldronLightFiltering",
+    "block.lightfiltering.AnvilLightFiltering",
+    "block.lightfiltering.BeaconLightFiltering",
+    "block.lightfiltering.BrewingStandLightFiltering",
+    "block.lightfiltering.HopperLightFiltering",
+    "block.lightfiltering.IceLightFiltering",
+    "block.lightfiltering.WaterLightFiltering"
   ],
   "server": [
   ],
