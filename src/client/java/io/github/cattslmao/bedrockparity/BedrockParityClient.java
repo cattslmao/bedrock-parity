@@ -6,7 +6,7 @@ import net.fabricmc.api.Environment;
 
 @Environment(EnvType.CLIENT)
 public class BedrockParityClient implements ClientModInitializer {
-	public static final ParityConfig config = new ParityConfig("client");
+	public static final ParityConfigHandler config = new ParityConfigHandler("client");
 
 	@Override
 	public void onInitializeClient() {
